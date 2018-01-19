@@ -114,14 +114,17 @@
     window.onload = function(){
         $('.btn').on('click', function(event) {
             var ran = parseInt(Math.random()*100);
-//            $.post('/dologin',$("form").serialize(), function (result) {
-//                if(result.status == 'error'){
-//                    //class="alert alert-info"
-//                    $(".form-top-left p").addClass('alert alert-info').html(result.message);
-//                }
-//            })
-            $.cookie('user',ran);
-            window.frames[0].postMessage(ran,"http://127.0.0.1:9000/index");
+            $.post('/dologin',$("form").serialize(), function (result) {
+                if(result.status == 'error'){
+                    //class="alert alert-info"
+                    $(".form-top-left p").addClass('alert alert-info').html(result.message);
+                }else{
+                    $.cookie('user',result.token);
+                    window.frames[0].postMessage(result.token,"http://127.0.0.1:9000/index");
+                }
+            })
+
+
             return false;
         })
     }

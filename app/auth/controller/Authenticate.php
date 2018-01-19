@@ -2,6 +2,7 @@
 
 namespace app\auth\controller;
 
+use think\Cache;
 use think\Controller;
 use think\Request;
 
@@ -36,6 +37,7 @@ class Authenticate extends Controller
     public function index()
     {
         //
+        
         return $this->fetch();
     }
 
@@ -46,7 +48,9 @@ class Authenticate extends Controller
 
         if(isset($this->userInfo[$username]) && $this->userInfo[$username]['password'] == $password){
 
-
+            $token = hash('sha256',$this->userInfo[$username]['uid'] .time());
+            Cache::set($token,$this->userInfo[$username]['uid']);
+            setcookie('xmus',$token);
             return json(['result' => 'success', 'message' => 'Token generated successfully', 'token' => '' . $token,]);
         }else{
             $res['status'] = 'error';
