@@ -10,6 +10,9 @@
 // +----------------------------------------------------------------------
 use \think\Route;
 Route::rule('/login','auth/Authenticate/index');
+Route::rule('/logout','auth/Authenticate/logout');
 Route::rule('/dologin','auth/Authenticate/checklogin' ,'POST');
+Route::rule('/commonhtml','auth/Authenticate/commonhtml');
 Route::rule('/index','index/index/index');
+
 

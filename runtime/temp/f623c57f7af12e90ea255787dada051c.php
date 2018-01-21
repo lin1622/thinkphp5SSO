@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"D:\Web\thinkphp5SSO\public/../app/auth\view\authenticate\index.html";i:1516551155;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 

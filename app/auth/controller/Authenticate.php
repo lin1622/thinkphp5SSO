@@ -37,7 +37,7 @@ class Authenticate extends Controller
     public function index()
     {
         //
-        
+
         return $this->fetch();
     }
 
@@ -75,4 +75,14 @@ class Authenticate extends Controller
     }
 
 
+    public function logout()
+    {
+        cookie('xmus',null);
+        $this->redirect('/login');
+    }
+
+    public function commonhtml()
+    {
+        return $this->fetch();
+    }
 }
