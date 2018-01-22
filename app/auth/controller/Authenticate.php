@@ -3,10 +3,12 @@
 namespace app\auth\controller;
 
 use think\Cache;
-use think\Controller;
 use think\Request;
+use app\common\controller\Common;
+use think\Session;
 
-class Authenticate extends Controller
+
+class Authenticate extends Common
 {
 
     public $userInfo = [
@@ -24,20 +26,28 @@ class Authenticate extends Controller
         ],
     ];
 
-    public $key ;
+//    protected $noCheckMoudle = ['auth'];
 
-    public $metabaseSiteUrl = 'http://loccalhost';
-    public $metabaseSecretKey = 'qwerty';
+    protected $noCheckController = ['authenticate'];
+
 
     /**
      * 显示资源列表
      *
      * @return \think\Response
      */
-    public function index()
+    public function login()
     {
-        //
-
+        $userToken = cookie('xmus');
+        if($userToken){
+            $redisObj = Cache::store('redis')->handler();
+            $uid = $redisObj->get($userToken);
+//            $uid = Cache::get($userToken);
+            if($uid){
+                $this->uid = $uid;
+                $this->redirect('/index');
+            }
+        }
         return $this->fetch();
     }
 
@@ -45,13 +55,16 @@ class Authenticate extends Controller
     public function checklogin( $username, $password)
     {
         $res = ['status'=>'success','message'=>''];
-
         if(isset($this->userInfo[$username]) && $this->userInfo[$username]['password'] == $password){
 
             $token = hash('sha256',$this->userInfo[$username]['uid'] .time());
-            Cache::set($token,$this->userInfo[$username]['uid']);
+            $redisObj = Cache::store('redis')->handler();
+            Session::set('user',$this->userInfo[$username]);
+            $redisObj->set($token,$this->userInfo[$username]['uid']);
             setcookie('xmus',$token);
-            return json(['result' => 'success', 'message' => 'Token generated successfully', 'token' => '' . $token,]);
+            $res['message'] = 'Token generated successfully';
+            $res['token'] = $token;
+            return json($res);
         }else{
             $res['status'] = 'error';
             $res['message'] = '账号密码错误';
@@ -59,24 +72,12 @@ class Authenticate extends Controller
         }
     }
 
-    public function validateToken($token)
-    {
-        try {
-            $token = (new Parser())->parse($token);
-        } catch (Exception $exception) {
-            return false;
-        }
-
-        $validationData = new ValidationData();
-        $validationData->setIssuer('JWT Example');
-        $validationData->setAudience('JWT Example');
-
-        return $token->validate($validationData);
-    }
-
 
     public function logout()
     {
+        $token = cookie('xmus');
+        $redisObj = Cache::store('redis')->handler();
+        $redisObj->del($token);
         cookie('xmus',null);
         $this->redirect('/login');
     }
@@ -84,5 +85,18 @@ class Authenticate extends Controller
     public function commonhtml()
     {
         return $this->fetch();
+    }
+
+    public function seed()
+    {
+        $users  = [
+            'user_1'=>['name'=>'lm','fullname'=>'linmao','email' => 'linmao@example.com','password' => '123456' ],
+            'user_2'=>['name'=>'test','fullname'=>'testfuillname','email' => 'test@example.com','password' => '123456' ],
+        ];
+        $redisObj = Cache::store('redis')->handler();
+        $redisObj->hMset('user_1',$users['user_1']);
+        $redisObj->hMset('user_2',$users['user_2']);
+//        $userinfo = $redisObj->hgetall('user_1');
+//        dump($userinfo);die();
     }
 }
