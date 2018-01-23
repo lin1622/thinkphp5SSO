@@ -99,4 +99,9 @@ class Authenticate extends Common
 //        $userinfo = $redisObj->hgetall('user_1');
 //        dump($userinfo);die();
     }
+
+    public function socketdemo()
+    {
+        return $this->fetch();
+    }
 }

@@ -17,7 +17,7 @@ class Index extends Common
         $res = $redisObj->get($xmjyssid);
 //        $res1 = unserialize($res);
         
-        print_r($res);die();
+//        print_r($res);die();
 
         $userInfo['uid'] = $uid;
         $this->assign('user',$userInfo);
