@@ -34,14 +34,14 @@
 
 </html>
 <script type="application/javascript">
-    ws = new WebSocket("ws://thinkphp5sso.com:2346");
+    ws = new WebSocket("ws://192.168.0.74:2346");
     ws.onopen = function() {
-        alert("连接成功");
+       // alert("连接成功");
         ws.send('tom');
-        alert("给服务端发送一个字符串：tom");
+        //alert("给服务端发送一个字符串：tom");
     };
     ws.onmessage = function(e) {
-        alert("收到服务端的消息：" + e.data);
+      console.log(e.data);
     };
 
 </script>

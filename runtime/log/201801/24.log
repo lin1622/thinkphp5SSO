@@ -1,119 +1,7 @@
 ---------------------------------------------------------------
-[ 2018-01-24T00:29:02+08:00 ] 0.0.0.0 GET /
-[ info ] thinkphp5sso.com/ [运行时间：0.323140s][吞吐率：3.09req/s] [内存消耗：1,798.88kb] [文件加载：48]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => '',
-    1 => NULL,
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
-  'connection' => 'keep-alive',
-  'upgrade-insecure-requests' => '1',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'referer' => 'http://localhost/',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2018-01-24T00:29:02+08:00 ] 0.0.0.0 GET /login
-[ info ] thinkphp5sso.com/login [运行时间：0.052669s][吞吐率：18.99req/s] [内存消耗：2,073.63kb] [文件加载：52]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'auth',
-    1 => 'Authenticate',
-    2 => 'login',
-  ),
-  'convert' => false,
-)
-[ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
-  'connection' => 'keep-alive',
-  'upgrade-insecure-requests' => '1',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'referer' => 'http://localhost/',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ RUN ] app\auth\controller\Authenticate->login[ D:\Web\thinkphp5SSO\app\auth\controller\Authenticate.php ]
-[ info ] [ VIEW ] D:\Web\thinkphp5SSO\public/../app/auth\view\authenticate\login.html [ array (
-) ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2018-01-24T00:44:48+08:00 ] 0.0.0.0 GET /
-[ info ] thinkphp5sso.com/ [运行时间：0.073968s][吞吐率：13.52req/s] [内存消耗：1,798.87kb] [文件加载：48]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => '',
-    1 => NULL,
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
-  'connection' => 'keep-alive',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-  'upgrade-insecure-requests' => '1',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9',
-  'cookie' => 'thinkphp_show_page_trace=0|0',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2018-01-24T00:44:48+08:00 ] 0.0.0.0 GET /login
-[ info ] thinkphp5sso.com/login [运行时间：0.033958s][吞吐率：29.45req/s] [内存消耗：1,904.36kb] [文件加载：50]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'auth',
-    1 => 'Authenticate',
-    2 => 'login',
-  ),
-  'convert' => false,
-)
-[ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
-  'connection' => 'keep-alive',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-  'upgrade-insecure-requests' => '1',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9',
-  'cookie' => 'thinkphp_show_page_trace=0|0',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ RUN ] app\auth\controller\Authenticate->login[ D:\Web\thinkphp5SSO\app\auth\controller\Authenticate.php ]
-[ info ] [ VIEW ] D:\Web\thinkphp5SSO\public/../app/auth\view\authenticate\login.html [ array (
-) ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2018-01-24T00:49:43+08:00 ] 0.0.0.0 GET /socketdemo
-[ info ] thinkphp5sso.com/socketdemo [运行时间：0.081375s][吞吐率：12.29req/s] [内存消耗：2,035.38kb] [文件加载：51]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ 2018-01-24T15:01:42+08:00 ] 192.168.0.74 GET /socketdemo
+[ info ] 192.168.0.74:9003/socketdemo [运行时间：0.066727s][吞吐率：14.99req/s] [内存消耗：2,449.56kb] [文件加载：51]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
@@ -125,9 +13,9 @@
   'convert' => false,
 )
 [ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
+  'host' => '192.168.0.74:9003',
   'connection' => 'keep-alive',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
   'upgrade-insecure-requests' => '1',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'accept-encoding' => 'gzip, deflate',
@@ -136,14 +24,14 @@
 )
 [ info ] [ PARAM ] array (
 )
-[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\Web\thinkphp5SSO\app\auth\controller\Authenticate.php ]
-[ info ] [ VIEW ] D:\Web\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
 ) ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2018-01-24T00:50:06+08:00 ] 0.0.0.0 GET /socketdemo
-[ info ] thinkphp5sso.com/socketdemo [运行时间：0.057368s][吞吐率：17.43req/s] [内存消耗：2,035.77kb] [文件加载：51]
-[ info ] [ LANG ] D:\Web\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ 2018-01-24T15:01:49+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.050878s][吞吐率：19.65req/s] [内存消耗：2,274.95kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
@@ -155,19 +43,204 @@
   'convert' => false,
 )
 [ info ] [ HEADER ] array (
-  'host' => 'thinkphp5sso.com',
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:01:54+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.053392s][吞吐率：18.73req/s] [内存消耗：2,275.47kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:08:30+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.057168s][吞吐率：17.49req/s] [内存消耗：2,450.05kb] [文件加载：51]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:11:30+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.051895s][吞吐率：19.27req/s] [内存消耗：2,275.47kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
   'connection' => 'keep-alive',
   'cache-control' => 'max-age=0',
   'upgrade-insecure-requests' => '1',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'accept-encoding' => 'gzip, deflate',
+  'accept-encoding' => 'gzip, deflate, br',
   'accept-language' => 'zh-CN,zh;q=0.9',
   'cookie' => 'thinkphp_show_page_trace=0|0',
 )
 [ info ] [ PARAM ] array (
 )
-[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\Web\thinkphp5SSO\app\auth\controller\Authenticate.php ]
-[ info ] [ VIEW ] D:\Web\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:12:17+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.040709s][吞吐率：24.56req/s] [内存消耗：2,275.47kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:16:39+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.047045s][吞吐率：21.26req/s] [内存消耗：2,275.47kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-24T15:16:59+08:00 ] 127.0.0.1 GET /socketdemo
+[ info ] 127.0.0.1:9003/socketdemo [运行时间：0.033768s][吞吐率：29.61req/s] [内存消耗：2,275.47kb] [文件加载：49]
+[ info ] [ LANG ] D:\github\SSO\thinkphp5SSO\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'auth',
+    1 => 'Authenticate',
+    2 => 'socketdemo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:9003',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\auth\controller\Authenticate->socketdemo[ D:\github\SSO\thinkphp5SSO\app\auth\controller\Authenticate.php ]
+[ info ] [ VIEW ] D:\github\SSO\thinkphp5SSO\public/../app/auth\view\authenticate\socketdemo.html [ array (
 ) ]
 [ info ] [ LOG ] INIT File
