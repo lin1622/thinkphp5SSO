@@ -1,0 +1,6 @@
+##ignore this file##
+.idea
+runtime
+vendor
+composer.lock
+think

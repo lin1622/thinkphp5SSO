@@ -17,4 +17,8 @@ Route::rule('/index','index/index/index');
 Route::rule('/seed','auth/Authenticate/seed');
 Route::rule('/socketdemo','auth/Authenticate/socketdemo');
 
+/*--------API------*/
+//用户模块  指令定义
+Route::rule('/api/users','api/Users/command');
+
 

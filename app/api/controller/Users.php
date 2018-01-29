@@ -8,92 +8,39 @@ use think\Request;
 
 class Users extends Controller
 {
+    use \traits\controller\Jump;
+
     /**
-     * 显示资源列表
-     *
-     * @return \think\Response
+     * api users统一指令入口
+     * @param Request $request
      */
-    public function index(Request $request)
+    public function command(Request $request)
     {
-        //
+        $command = $request->param('command');
+
+        switch($command){
+            case 'checklogin':
+                return $this->checklogin($request);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 验证登录用户信息
+     * @param Request $request
+     */
+    public function checklogin(Request $request)
+    {
         $account = $request->param('account');
         $password = $request->param('password');
-        var_dump($request->header());
-        var_dump($request->getInput() );
-        die();
         $user = \think\Loader::model('Users') ;
         $userInfo = $user->where(['account'=>$account,'password'=>$password])->find();
         if($userInfo){
-            return json($userInfo->toArray());
+            return $this->result($userInfo->toArray(),10001,'userinfo','json');
         }else{
-            echo "asdasd";
+            return $this->result($userInfo->toArray(),40001,'userinfo','json');
         }
-
-    }
-
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * 保存新建的资源
-     *
-     * @param  \think\Request  $request
-     * @return \think\Response
-     */
-    public function save(Request $request)
-    {
-        //
-    }
-
-    /**
-     * 显示指定的资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read($id)
-    {
-        //
-    }
-
-    /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * 保存更新的资源
-     *
-     * @param  \think\Request  $request
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * 删除指定资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function delete($id)
-    {
-        //
     }
 }
