@@ -1,6 +1,10 @@
 ##ignore this file##
 .idea
+<<<<<<< HEAD
 runtime
 vendor
 composer.lock
 think
+=======
+runtime
+>>>>>>> e934c4ca9d99022e1d5ab8bea306451d73db062e
