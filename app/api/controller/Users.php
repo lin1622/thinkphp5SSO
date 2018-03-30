@@ -40,7 +40,7 @@ class Users extends Controller
         if($userInfo){
             return $this->result($userInfo->toArray(),10001,'userinfo','json');
         }else{
-            return $this->result($userInfo->toArray(),40001,'userinfo','json');
+            return $this->result([],40001,'userinfo','json');
         }
     }
 }

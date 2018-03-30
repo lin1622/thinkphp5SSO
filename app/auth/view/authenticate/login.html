@@ -55,45 +55,46 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 form-box">
-                    <div class="form-top">
-                        <div class="form-top-left">
-                            <h3>Login to our site</h3>
-                            <p>Enter your username and password to log on:</p>
-                        </div>
-                        <div class="form-top-right">
-                            <i class="fa fa-lock"></i>
-                        </div>
-                    </div>
-                    <div class="form-bottom">
-                        <form role="form" action="/dologin" method="post" class="login-form">
-                            <div class="form-group">
-                                <label class="sr-only" for="username">Username</label>
-                                <input type="text" name="username" placeholder="Username..." . class="username form-control" id="username">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="password">Password</label>
-                                <input type="password" name="password" placeholder="Password..."  class="password form-control" id="password">
-                            </div>
-                            <button type="submit" class="btn" >Sign in!</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 social-login">
-                    <h3>...or login with:</h3>
 
-                </div>
-            </div>
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+                查看用户信息
+            </button>
 
         </div>
     </div>
 
 </div>
 
-
+<div class="modal fade" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="/dologin" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="username">Username</label>
+                                    <input type="text" name="username" placeholder="Username..." . class="username form-control" id="username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" name="password" placeholder="Password..."  class="password form-control" id="password">
+                                </div>
+                                <button type="submit" class="btn" >Sign in!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <!-- Javascript -->
 <script src="assets/js/jquery-1.11.1.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -110,10 +111,17 @@
 
 </html>
 <script type="application/javascript">
-    var iframeurl = 'http://localhost:9000/commonhtml';
-    basic.createiframe(iframeurl);
+
+    var islogin = false;
+
+
+
+    // var iframeurl = 'http://localhost:9000/commonhtml';
+    // basic.createiframe(iframeurl);
     window.onload = function(){
-        $('.btn').on('click', function(event) {
+        $('#myModal .btn').on('click', function(event) {
+            event.preventDefault();alert('asd');
+
             $.post('/dologin',$("form").serialize(), function (result) {
                 console.log(result);
                 if(result.status == 'error'){
@@ -129,4 +137,5 @@
             return false;
         })
     }
+
 </script>
