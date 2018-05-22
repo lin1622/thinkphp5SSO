@@ -9,16 +9,27 @@ index/index/index
 <script type="application/javascript" charset="UTF-8">
 
 
-
     window.onload = function () {
         window.addEventListener('message', function (event) {
-            window.parent.postMessage(event.data + "recevie",'*');
+
             if (event.source != window.parent) return;
             var origin = event.origin || event.originalEvent.origin;
-            document.cookie = "xmus=" + event.data;
-        }, false)
 
-        window.parent.postMessage($.cookie('xmus'),'*');
+            var postData = JSON.parse(event.data);
+
+            switch (postData.type) {
+                case 'set':
+                    $.cookie('xmus',postData.data);
+                    var returnData = {type:'console',data:$.cookie('xmus')}
+                    window.parent.postMessage(JSON.stringify(returnData), '*');
+                    break;
+                case '':
+                    break;
+            }
+
+        }, false);
+        var boardcast = {type:'boardcast',data:$.cookie('xmus')};
+        window.parent.postMessage(JSON.stringify(boardcast), '*');
     }
 </script>
 </body>

@@ -126,16 +126,25 @@
                     $(".form-top-left p").addClass('alert alert-info').html(result.message);
                 }
                 if (result.status == 'success') {
-                    window.frames[0].postMessage(result.token, iframeurl);
-                    window.location.href = "/index";
+
+                    var set = {type: 'set', data: result.token};
+                    window.frames[0].postMessage(JSON.stringify(set), iframeurl);
+                    // window.location.href = "/index";
                 }
             })
             return false;
         })
+
+
         window.addEventListener('message', function (rs) {
             console.log(rs.data);
-            if (rs.data != null) {
-                document.cookie = "xmus=" + rs.data;
+            var postData = JSON.parse(rs.data);
+            if (postData.type == 'boardcast' && postData.data != undefined) {
+                $.cookie('xmus',postData.data);
+            }
+
+            if (postData.type == 'console') {
+                console.log(postData.data);
             }
         })
         basic.createiframe(iframeurl);
