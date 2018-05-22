@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Login Form Template</title>
+    <title>单点登录Demo</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/css.css">
@@ -29,10 +29,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <script>
-        //全登陆不允许iframe嵌入
-        if (window.top !== window.self) {
-            window.top.location = window.location;
-        }
+        // //全登陆不允许iframe嵌入
+        // if (window.top !== window.self) {
+        //     window.top.location = window.location;
+        // }
     </script>
 
 </head>
@@ -50,7 +50,8 @@
                     <div class="description">
                         <p>
                             This is a free responsive login form made with Bootstrap.
-                            Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                            Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it
+                            as you like!
                         </p>
                     </div>
                 </div>
@@ -80,13 +81,15 @@
                             <form role="form" action="/dologin" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="username">Username</label>
-                                    <input type="text" name="username" placeholder="Username..." . class="username form-control" id="username">
+                                    <input type="text" name="username" placeholder="Username..." .
+                                           class="username form-control" id="username">
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="password">Password</label>
-                                    <input type="password" name="password" placeholder="Password..."  class="password form-control" id="password">
+                                    <input type="password" name="password" placeholder="Password..."
+                                           class="password form-control" id="password">
                                 </div>
-                                <button type="submit" class="btn" >Sign in!</button>
+                                <button type="submit" class="btn">Sign in!</button>
                             </form>
                         </div>
                     </div>
@@ -112,30 +115,31 @@
 </html>
 <script type="application/javascript">
 
-    var islogin = false;
 
+    $(function () {
+        var iframeurl = 'http://dev.sso.com/commonhtml';
+        $('#myModal .btn').on('click', function (event) {
+            event.preventDefault();
 
-
-    // var iframeurl = 'http://localhost:9000/commonhtml';
-    // basic.createiframe(iframeurl);
-    window.onload = function(){
-        $('#myModal .btn').on('click', function(event) {
-            event.preventDefault();alert('asd');
-
-            $.post('/dologin',$("form").serialize(), function (result) {
-                console.log(result);
-                if(result.status == 'error'){
-                    //class="alert alert-info"
+            $.post('/dologin', $("form").serialize(), function (result) {
+                if (result.status == 'error') {
                     $(".form-top-left p").addClass('alert alert-info').html(result.message);
                 }
-                if(result.status == 'success'){
-                    console.log('success');
-                    window.frames[0].postMessage(result.token,iframeurl);
+                if (result.status == 'success') {
+                    window.frames[0].postMessage(result.token, iframeurl);
                     window.location.href = "/index";
                 }
             })
             return false;
         })
-    }
+        window.addEventListener('message', function (rs) {
+            console.log(rs.data);
+            if (rs.data != null) {
+                document.cookie = "xmus=" + rs.data;
+            }
+        })
+        basic.createiframe(iframeurl);
+    })
+
 
 </script>

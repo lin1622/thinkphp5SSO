@@ -110,19 +110,5 @@
 
 </html>
 <script type="application/javascript">
-    basic.createiframe('http://thinkphp5sso/commonhtml');
-    window.onload = function(){
-        $('.btn').on('click', function(event) {
-            var ran = parseInt(Math.random()*100);
-            $.post('/dologin',$("form").serialize(), function (result) {
-                if(result.status == 'error'){
-                    //class="alert alert-info"
-                    $(".form-top-left p").addClass('alert alert-info').html(result.message);
-                }else{
-                    window.frames[0].postMessage(result.token,basic.iframeurl);
-                }
-            })
-            return false;
-        })
-    }
+
 </script>

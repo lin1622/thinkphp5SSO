@@ -11,6 +11,7 @@ var basic = {
                 var createifr = document.createElement('iframe');
                 createifr.src = v;
                 createifr.style.display='none';
+                createifr.name = 'sso';
                 document.body.appendChild(createifr);
             });
 		}

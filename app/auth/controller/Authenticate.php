@@ -39,11 +39,11 @@ class Authenticate extends Common
     public function login()
     {
         $userToken = cookie('xmus');
-        if($userToken){
+        if ($userToken) {
             $redisObj = Cache::store('redis')->handler();
             $uid = $redisObj->get($userToken);
 //            $uid = Cache::get($userToken);
-            if($uid){
+            if ($uid) {
                 $this->uid = $uid;
                 $this->redirect('/index');
             }
@@ -52,20 +52,20 @@ class Authenticate extends Common
     }
 
 
-    public function checklogin( $username, $password)
+    public function checklogin($username, $password)
     {
-        $res = ['status'=>'success','message'=>''];
-        if(isset($this->userInfo[$username]) && $this->userInfo[$username]['password'] == $password){
+        $res = ['status' => 'success', 'message' => ''];
+        if (isset($this->userInfo[$username]) && $this->userInfo[$username]['password'] == $password) {
 
-            $token = hash('sha256',$this->userInfo[$username]['uid'] .time());
+            $token = hash('sha256', $this->userInfo[$username]['uid'] . time());
             $redisObj = Cache::store('redis')->handler();
-            Session::set('user',$this->userInfo[$username]);
-            $redisObj->set($token,$this->userInfo[$username]['uid']);
-            setcookie('xmus',$token);
+            Session::set('user', $this->userInfo[$username]);
+            $redisObj->set($token, $this->userInfo[$username]['uid']);
+            cookie('xmus', $token);
             $res['message'] = 'Token generated successfully';
             $res['token'] = $token;
             return json($res);
-        }else{
+        } else {
             $res['status'] = 'error';
             $res['message'] = '账号密码错误';
             return json($res);
@@ -78,7 +78,7 @@ class Authenticate extends Common
         $token = cookie('xmus');
         $redisObj = Cache::store('redis')->handler();
         $redisObj->del($token);
-        cookie('xmus',null);
+        cookie('xmus', null);
         $this->redirect('/login');
     }
 
@@ -89,13 +89,13 @@ class Authenticate extends Common
 
     public function seed()
     {
-        $users  = [
-            'user_1'=>['name'=>'lm','fullname'=>'linmao','email' => 'linmao@example.com','password' => '123456' ],
-            'user_2'=>['name'=>'test','fullname'=>'testfuillname','email' => 'test@example.com','password' => '123456' ],
+        $users = [
+            'user_1' => ['name' => 'lm', 'fullname' => 'linmao', 'email' => 'linmao@example.com', 'password' => '123456'],
+            'user_2' => ['name' => 'test', 'fullname' => 'testfuillname', 'email' => 'test@example.com', 'password' => '123456'],
         ];
         $redisObj = Cache::store('redis')->handler();
-        $redisObj->hMset('user_1',$users['user_1']);
-        $redisObj->hMset('user_2',$users['user_2']);
+        $redisObj->hMset('user_1', $users['user_1']);
+        $redisObj->hMset('user_2', $users['user_2']);
 //        $userinfo = $redisObj->hgetall('user_1');
 //        dump($userinfo);die();
     }
